@@ -18,3 +18,12 @@ export const updateStudent = async(student) => {
     return updatedStudent;
 
 }
+
+
+//delete
+export const deleteStudent = async(id) => {
+
+    const deletedStudent = await studentModel.remove(id);
+    return deletedStudent;
+
+}

@@ -44,3 +44,21 @@ export const editstudent = async (req, res) =>{
         });
     }
 }
+
+//delete
+export const deleteStudent = async (req, res) =>{
+    const{ id } = req.params;
+ 
+    try {
+        const deletedStudent = await studentService.deleteStudent(parseInt(id));
+        res.status(200).json({
+            success: true,
+            messages: deletedStudent
+        });
+    }catch(e){
+        console.log(e);
+        res.status(500).json({
+            error:"Internal Server Error"
+        });
+    }
+}
