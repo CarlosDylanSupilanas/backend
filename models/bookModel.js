@@ -16,6 +16,7 @@ export const findBookByNameAndAuthor = async (book) => {
 
 export const findBookById = async (id) => {
   const [rows] = await pool.query("SELECT * FROM book WHERE id = ?"[id]);
+  return rows;
 };
 
 //insert
